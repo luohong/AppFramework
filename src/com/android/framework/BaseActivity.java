@@ -55,7 +55,7 @@ public abstract class BaseActivity extends FragmentActivity {
      * onInitViewData();<br/>
      * onBindListener();<br/>
      */
-    public void onInit(){}
+    public abstract void onInit();
     
     /**
      * 查找控件 <br/>
@@ -65,7 +65,7 @@ public abstract class BaseActivity extends FragmentActivity {
      * onInitViewData();<br/>
      * onBindListener();<br/>
      */
-    public void onFindViews() {}
+    public abstract void onFindViews();
     
     /**
      * 初始化控件内容
@@ -75,7 +75,7 @@ public abstract class BaseActivity extends FragmentActivity {
      * <font color=red>onInitViewData();</font><br/>
      * onBindListener();<br/>
      */
-    public void onInitViewData(){}
+    public abstract void onInitViewData();
     
     /**
      * 注册控件事件
@@ -85,7 +85,7 @@ public abstract class BaseActivity extends FragmentActivity {
      * onInitViewData();<br/>
      * <font color=red>onBindListener();</font><br/>
      */
-    public void onBindListener(){}
+    public abstract void onBindListener();
     
     @Override
     protected void onResume() {
