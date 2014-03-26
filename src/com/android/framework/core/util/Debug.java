@@ -1,0 +1,1 @@
+package com.android.framework.core.util;import android.util.Log;/** *  * 调试�? *  * @author lizhiyong * */public class Debug {    final static boolean DEBUG  = true;        public static void Log(String msg){    		if (DEBUG) {    			Log.e("+++++++++++com.demohunter.suipai++++++++++++++++", msg);    		}    }}
