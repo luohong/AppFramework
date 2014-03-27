@@ -5,29 +5,29 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class DBHelper extends SQLiteOpenHelper {
+public class DbHelper extends SQLiteOpenHelper {
 	
-	private static final String DB_NAME = "mydb";
+	private static final String DB_NAME = "basketballsupervisor";
 
-	private static final int DATABASE_VERSION=4;
+	private static final int DATABASE_VERSION = 1;
 
-	private static DBHelper mDBHelper;
+	private static DbHelper mDbHelper;
 
-	public static DBHelper getInstance(Context context) {
-		if (mDBHelper == null) {
-			mDBHelper = new DBHelper(context);
+	public static DbHelper getInstance(Context context) {
+		if (mDbHelper == null) {
+			mDbHelper = new DbHelper(context);
 		}
-		return mDBHelper;
+		return mDbHelper;
 	}
 
-	private DBHelper(Context context) {
+	private DbHelper(Context context) {
 		super(context, DB_NAME, null, DATABASE_VERSION);
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		Log.i(getTag(), "onCreate");
-		createTabale(db);
+		createTable(db);
 	}
 
 	@Override
@@ -39,10 +39,10 @@ public class DBHelper extends SQLiteOpenHelper {
 //		db.execSQL("DROP TABLE IF EXISTS " + RegionInfoDB.TABLE_NAME);
 //		db.execSQL("DROP TABLE IF EXISTS " + SearChRecordDB.TABLE_NAME);
 //		db.execSQL("DROP TABLE IF EXISTS " + AgentDb.TABLE_NAME);
-		createTabale(db);
+		createTable(db);
 	}
 
-	private void createTabale(SQLiteDatabase db) {
+	private void createTable(SQLiteDatabase db) {
 //		db.execSQL(CityDb.CREATE_TABLE);
 //		db.execSQL(SaleEvaluateDb.CREATE_TABLE);
 //		db.execSQL(QueryCacheDB.CREATE_TABLE);

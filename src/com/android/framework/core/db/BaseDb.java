@@ -7,14 +7,31 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 public abstract class BaseDb {
+	
+	public static final String CREATE_TABLE_PREFIX = "CREATE TABLE IF NOT EXISTS ";
+	public static final String DROP_TABLE_PREFIX = "DROP TABLE IF EXISTS ";
+	
+	public static interface COLUMN_TYPE {
+		public static final String INTEGER = " INTEGER ";
+		public static final String LONG = " LONG ";
+		public static final String TEXT = " TEXT ";
+	}
+	
+	public static final String PRIMARY_KEY = " PRIMARY KEY ";
+	public static final String PRIMARY_KEY_AUTOINCREMENT = " PRIMARY KEY AUTOINCREMENT ";
+	
+	public static final String BRACKET_LEFT = " ( ";
+	public static final String BRACKET_RIGHT = " );";
+	public static final String COMMA = ",";
+	
 	protected Cursor cursor = null;
 
-	protected DBHelper helper = null;
+	protected DbHelper helper = null;
 
 	protected SQLiteDatabase db = null;
 
 	public BaseDb(Context context) {
-		helper = DBHelper.getInstance(context);
+		helper = DbHelper.getInstance(context);
 		db = helper.getWritableDatabase();
 	}
 
@@ -76,4 +93,6 @@ public abstract class BaseDb {
     protected abstract String getTableName();
     
     protected abstract String getCreateTableSQL();
+    
+    protected abstract String getDropTableSQL();
 }
