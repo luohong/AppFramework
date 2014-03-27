@@ -5,15 +5,9 @@ import android.os.Environment;
 
 public class Config {
 	
-	// ApiDocs：http://app.zzz4.com/29f9ba2d4e8b39f2e7cf04fd691c2790/ApiDocs
-	
-	public static String FIRST_OPEN = "first_open";
-	
-	//屏幕尺寸
-	public static int screenWidth = 720, screenHeight = 1280;
-	
     //HTTP请求超时时间
     public static final int HTTP_TIMEOUT = 30000;
+    
     //DEBUG SWITCH
     public static final boolean DEBUG = false;
     
