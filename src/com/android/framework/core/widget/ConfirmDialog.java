@@ -65,12 +65,16 @@ public class ConfirmDialog extends BaseDialog {
 	}
 
 	protected void btnCancel(View v) {
-		onCancelListener.onClick(v);
+		if (onCancelListener != null) {
+			onCancelListener.onClick(v);
+		}
 		dismiss();
 	}
 
 	protected void btnOK(View v) {
-		onOKListener.onClick(v);
+		if (onCancelListener != null) {
+			onOKListener.onClick(v);
+		}
 		dismiss();
 	}
 
