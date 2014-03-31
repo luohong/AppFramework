@@ -2,6 +2,7 @@ package com.android.framework.core.widget;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 import android.widget.ProgressBar;
@@ -57,7 +58,9 @@ public class ProgressDialog extends BaseDialog {
 	@Override
 	protected void initDialogViews() {
 		// 去掉标题
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+//		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		getWindow().setGravity(Gravity.CENTER);
 
 		pbLoading = (ProgressBar) findViewById(android.R.id.progress);
 		tvMessage = (TextView) findViewById(android.R.id.message);
