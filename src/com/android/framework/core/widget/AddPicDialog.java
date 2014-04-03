@@ -1,6 +1,7 @@
 package com.android.framework.core.widget;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,6 +41,8 @@ public class AddPicDialog extends BaseDialog {
 		});
 		btnCameraPic.setOnClickListener(mListener);
 		btnSelectPic.setOnClickListener(mListener);
+		
+		getWindow().setGravity(Gravity.BOTTOM);
 	}
 
 }

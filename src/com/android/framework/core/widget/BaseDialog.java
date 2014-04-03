@@ -40,7 +40,7 @@ public abstract class BaseDialog extends Dialog {
 	private void init(Context context) {
 		View view = View.inflate(context, getLayoutId(), null);
 		setContentView(view);
-		getWindow().setGravity(Gravity.BOTTOM);
+		getWindow().setGravity(Gravity.CENTER);
 		setCanceledOnTouchOutside(true);
 		
 		initDialogViews();
@@ -50,9 +50,15 @@ public abstract class BaseDialog extends Dialog {
 	    WindowManager m = win.getWindowManager();
 		DisplayMetrics  dm = new DisplayMetrics();    
 	    m.getDefaultDisplay().getMetrics(dm);    
+	    
+	    int width = context.getResources().getDimensionPixelSize(R.dimen.dialog_max_width);
+	    
+	    if (dm.widthPixels < width) {
+	    	width = dm.widthPixels;
+	    }
 
 		WindowManager.LayoutParams p = win.getAttributes();
-		p.width = (int) dm.widthPixels;
+		p.width = width;
 	    win.setAttributes(p);
 	}
 
