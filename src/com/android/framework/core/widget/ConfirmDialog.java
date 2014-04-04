@@ -72,7 +72,7 @@ public class ConfirmDialog extends BaseDialog {
 	}
 
 	protected void btnOK(View v) {
-		if (onCancelListener != null) {
+		if (onOKListener != null) {
 			onOKListener.onClick(v);
 		}
 		dismiss();
