@@ -7,7 +7,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center" >
+        android:layout_gravity="center" 
+	    android:background="@drawable/bg_tips"
+	    android:gravity="center">
 
         <ProgressBar
             android:id="@android:id/progress"
@@ -25,7 +27,9 @@
             android:layout_marginRight="16dp"
             android:maxLines="2"
             android:textSize="18sp"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/white"
+            android:layout_height="wrap_content" 
+            android:text="正在获取"/>
     </LinearLayout>
 
 </FrameLayout>
