@@ -19,7 +19,7 @@ public class AddPicDialog extends BaseDialog {
 	}
 
 	@Override
-	protected void afterDialogViews() {
+	protected void onInitViewData() {
 
 	}
 
@@ -29,7 +29,7 @@ public class AddPicDialog extends BaseDialog {
 	}
 
 	@Override
-	protected void initDialogViews() {
+	protected void onFindViews() {
 		btnCancel = (Button) findViewById(R.id.btn_cancel_pic);
 		btnCameraPic = (Button) findViewById(R.id.btn_camera_pic);
 		btnSelectPic = (Button) findViewById(R.id.btn_select_pic);

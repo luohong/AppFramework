@@ -21,8 +21,6 @@ import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.StrictMode;
 
-import com.android.framework.MainActivity;
-
 /**
  * Class containing some static utility methods.
  */
@@ -42,11 +40,11 @@ public class Utils {
                             .detectAll()
                             .penaltyLog();
 
-            if (Utils.hasHoneycomb()) {
-                threadPolicyBuilder.penaltyFlashScreen();
-                vmPolicyBuilder
-                        .setClassInstanceLimit(MainActivity.class, 1);
-            }
+//            if (Utils.hasHoneycomb()) {
+//                threadPolicyBuilder.penaltyFlashScreen();
+//                vmPolicyBuilder
+//                        .setClassInstanceLimit(MainActivity.class, 1);
+//            }
             StrictMode.setThreadPolicy(threadPolicyBuilder.build());
             StrictMode.setVmPolicy(vmPolicyBuilder.build());
         }

@@ -183,10 +183,10 @@ public class ConfirmDialog extends BaseDialog {
 	}
 
 	@Override
-	protected void afterDialogViews() {
+	protected void onInitViewData() {
 	}
 
 	@Override
-	protected void initDialogViews() {
+	protected void onFindViews() {
 	}
 }

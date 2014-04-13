@@ -56,7 +56,7 @@ public class ProgressDialog extends BaseDialog {
 	}
 
 	@Override
-	protected void initDialogViews() {
+	protected void onFindViews() {
 		// 去掉标题
 //		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		
@@ -77,7 +77,7 @@ public class ProgressDialog extends BaseDialog {
 	}
 
 	@Override
-	protected void afterDialogViews() {
+	protected void onInitViewData() {
 		
 	}
 }

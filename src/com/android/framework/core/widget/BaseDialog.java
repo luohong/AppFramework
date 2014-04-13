@@ -27,31 +27,36 @@ public abstract class BaseDialog extends Dialog {
 	}
 
 	public BaseDialog(Context context, int theme) {
-		super(context, R.style.BaseDialog);
+		super(context, theme);
 		this.context = context;
 	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		init(context);
+		init();
 	}
 
-	private void init(Context context) {
+	private void init() {
 		View view = View.inflate(context, getLayoutId(), null);
 		setContentView(view);
 		getWindow().setGravity(Gravity.CENTER);
 		setCanceledOnTouchOutside(true);
 		
-		initDialogViews();
-		afterDialogViews();
+		onFindViews();
+		onInitViewData();
 		
+		initWindowLayoutParams();
+	}
+
+	public void initWindowLayoutParams() {
 		Window win = getWindow();
 	    WindowManager m = win.getWindowManager();
 		DisplayMetrics  dm = new DisplayMetrics();    
 	    m.getDefaultDisplay().getMetrics(dm);    
-	    
+		
 	    int width = context.getResources().getDimensionPixelSize(R.dimen.dialog_max_width);
+//	    int margin = context.getResources().getDimensionPixelSize(R.dimen.dialog_margin);
 	    
 	    if (dm.widthPixels < width) {
 	    	width = dm.widthPixels;
@@ -59,12 +64,13 @@ public abstract class BaseDialog extends Dialog {
 
 		WindowManager.LayoutParams p = win.getAttributes();
 		p.width = width;
+//		p.verticalMargin = margin;
 	    win.setAttributes(p);
 	}
 
 	protected abstract int getLayoutId();
 
-	protected abstract void initDialogViews();
+	protected abstract void onFindViews();
 
-	protected abstract void afterDialogViews();
+	protected abstract void onInitViewData();
 }
