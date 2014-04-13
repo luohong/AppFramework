@@ -28,7 +28,7 @@ public class ProgressDialog extends BaseDialog {
 	ProgressBar pbLoading;
 
 	public ProgressDialog(Context context) {
-		super(context, R.style.ProgressDialog);
+		super(context);// , R.style.ProgressDialog
 	}
 
 	protected ProgressDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
@@ -64,6 +64,15 @@ public class ProgressDialog extends BaseDialog {
 
 		pbLoading = (ProgressBar) findViewById(android.R.id.progress);
 		tvMessage = (TextView) findViewById(android.R.id.message);
+	}
+
+	@Override
+	protected void onInitViewData() {
+		
+	}
+	
+	@Override
+	public void initWindowLayoutParams() {
 
 		// 设置对话框透明度和宽高
 		DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
@@ -74,10 +83,5 @@ public class ProgressDialog extends BaseDialog {
 		attributes.height = attributes.width;
 		window.setAttributes(attributes);
 		setCanceledOnTouchOutside(false);
-	}
-
-	@Override
-	protected void onInitViewData() {
-		
 	}
 }
