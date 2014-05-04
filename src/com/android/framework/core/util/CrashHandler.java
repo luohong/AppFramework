@@ -44,7 +44,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 			return true;
 		}
 		File fileDir = new File(Environment.getExternalStorageDirectory()
-				+ "/suipai");
+				+ "/basketballsupervisor");
 		if (!fileDir.exists())
 			fileDir.mkdirs();
 		File exceptionFile = new File(fileDir, "exception.txt");
