@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <declare-styleable name="ParallaxScrollView">
+       <attr name="zoomRatio" format="float" />
+   </declare-styleable>
+   <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"></attr>
+        <attr name="round_corner_radius" format="dimension"></attr>
+    </declare-styleable>
+</resources>
